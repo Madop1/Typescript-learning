@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import { propsApp } from './interface';
+import { PropsSample } from './PropsSample';
+import { User } from './User';
+import "./style.scss";
+import { Login } from './Login';
+import Register from './Register';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import ApiCalling from './ApiCalling';
+function App({ propName, propNumber = 22 }: propsApp) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PropsSample propName={propName} propNumber={propNumber} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<User />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+          <ApiCalling />
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
