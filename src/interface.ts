@@ -16,4 +16,7 @@ export interface Userdata {
 }[]
 
 
+export interface Cakes {
+    numberOfCakes: number;
+}
 
