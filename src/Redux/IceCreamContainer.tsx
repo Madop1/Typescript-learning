@@ -11,7 +11,7 @@ function NewIceCreamContainer() {
 //     return false;
 //   }
   return (
-    <div>
+    <div className="app2">
       <h2> 🍦 available at store - {numberOfIceCream} </h2>
       <input
         type="number"

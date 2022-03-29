@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import axios from "axios";
+import './App.css';
 
 const initialState = {
     userDetails: [],
@@ -78,7 +79,8 @@ function ApiCalling() {
 
 
     return (
-        <div>
+        <div className="app1">
+            <h2>Fetching sample data from mockapi for practise.</h2>
             {loading ? (
                 <p>loading...</p>
             ) : error ? (
@@ -87,7 +89,7 @@ function ApiCalling() {
                 <ul>
                     {userDetails.map((user: User, index: any) => (
                         <li key={index}>
-                            <h1>{user.name}</h1>
+                            <h3>{user.name}</h3>
                             <p>{user.email}</p>
                         </li>
                     ))}

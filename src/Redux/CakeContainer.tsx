@@ -8,7 +8,7 @@ function CakeContainer() {
     const dispatch = useDispatch()
     console.log(numOfCakes);
     return (
-        <div>
+        <div className="app2">
             <h2> Cake available at store - {numOfCakes} </h2>
             <button onClick={() => dispatch(buyCake(1))}>Buy cake</button>
         </div>

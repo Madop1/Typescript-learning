@@ -1,5 +1,7 @@
+import { Button } from '@mui/material';
 import React from 'react';
 import { useState } from "react";
+import { useNavigate } from 'react-router';
 import loginImg from "./login.svg";
 
 export const Login = () => {
@@ -7,7 +9,7 @@ export const Login = () => {
         email: "",
         password: "",
     });
-
+    let navigate=useNavigate();
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         let arr = localStorage.getItem("users");
@@ -67,6 +69,15 @@ export const Login = () => {
                     </div>
                 </div>
             </form>
+            <Button
+
+        variant="contained"
+        color="secondary"
+        type="submit"
+        onClick={() => navigate("/")}
+      >
+        Return to Home component
+      </Button>
         </>
     );
 };
